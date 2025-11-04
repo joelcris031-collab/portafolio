@@ -9,52 +9,40 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Inter', sans-serif; background: #111; color: #fff; line-height: 1.6; }
     a { text-decoration: none; color: inherit; }
-
-    /* Header */
     header { position: sticky; top: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(6px); z-index: 10; }
     nav { display: flex; justify-content: center; gap: 2rem; padding: 1rem; flex-wrap: wrap; }
     nav a { font-weight: 600; transition: color 0.3s; }
     nav a:hover { color: #ffeb3b; }
-
-    /* Secciones */
     main { max-width: 1000px; margin: auto; }
     section { padding: 4rem 1rem; text-align: center; }
     h1, h2, h3 { margin-bottom: 1rem; }
     h1 { font-size: 2.8rem; background: linear-gradient(90deg, #ffeb3b, #ff9800, #f44336); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 16px;
+  object-fit: contain;
+  background-color: #000; /* opcional */
+  border: 3px solid #fff;
+  margin-bottom: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-    /* Foto de perfil */
-    .photo { width: 160px; height: 160px; border-radius: 16px; object-fit: cover; border: 3px solid #fff; margin-bottom: 1rem; transition: transform 0.3s, box-shadow 0.3s; }
     .photo:hover { transform: scale(1.05); box-shadow: 0 12px 25px rgba(255,255,255,0.5); }
-
-    /* Introducción */
     .intro { font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem; }
-
-    /* Botones */
     .buttons { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
     .btn { padding: 0.7rem 1.8rem; border-radius: 8px; font-weight: 600; background: linear-gradient(45deg, #ff4081, #ff9800, #ffeb3b); background-size: 200% 200%; transition: all 0.3s; color: #111; }
     .btn:hover { transform: scale(1.05); background-position: right center; }
-
-    /* Habilidades y metas */
     .grid { display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap; margin-top: 2rem; text-align: left; }
     .card { background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 12px; width: 250px; }
     .card ul { list-style: disc; padding-left: 1.2rem; margin-top: 0.5rem; }
-
-    /* Proyectos */
     .projects-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-top: 2rem; }
     .project-card { background: rgba(255,255,255,0.05); border-radius: 12px; width: 250px; padding: 1rem; transition: transform 0.3s, box-shadow 0.3s; text-align: center; }
-    .project-card img { width: 100%; border-radius: 8px; margin-bottom: 0.5rem; transition: transform 0.3s; }
-    .project-card:hover img { transform: scale(1.05); }
     .project-card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(255,255,255,0.3); }
     .project-tech { font-size: 0.85rem; color: #ffeb3b; font-weight: 600; margin-bottom: 0.5rem; }
-    .project-button { display: inline-block; padding: 0.5rem 1rem; border-radius: 6px; background: linear-gradient(45deg, #ff4081, #ff9800, #ffeb3b); color: #111; font-weight: bold; transition: all 0.3s; background-size: 200% 200%; }
-    .project-button:hover { transform: scale(1.05); background-position: right center; }
-
-    /* Footer */
     footer { margin-top: 4rem; padding: 2rem; text-align: center; background: rgba(0,0,0,0.85); }
     footer a { margin: 0 0.5rem; font-weight: 600; transition: color 0.3s; }
     footer a:hover { color: #ffeb3b; }
-
-    /* Media Queries */
     @media (max-width: 768px) {
       h1 { font-size: 2.2rem; }
       .grid { flex-direction: column; align-items: center; gap: 2rem; }
@@ -64,8 +52,6 @@
   </style>
 </head>
 <body>
-
-  <!-- Header -->
   <header>
     <nav>
       <a href="#about">Acerca de mí</a>
@@ -76,14 +62,11 @@
   </header>
 
   <main>
-
-    <!-- Sección: Acerca de mí -->
-    <section id="about">
-      <img src="529851041_122283725084010277_8363308549497048929_n.jpg" alt="Foto de Joel" class="photo" onerror="this.src='https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=180&q=80';">
-      <h1>Hola, soy Joel</h1>
+   <section id="about">
+            <img src="/fotojoel.png" alt="Foto de Joel" class="photo">
+      <h1>Hola, soy Joel</h1>
       <p class="intro">
-        Bienvenido a mi portafolio. Me gusta pintar, disfrutar de mi tiempo en casa, ver películas de terror y explorar el arte como pasatiempo.
-        Siempre busco aprender cosas nuevas y expresar mi creatividad tanto en la web como en la vida diaria.
+        Bienvenido a mi portafolio. Me gusta pintar, disfrutar de mi tiempo en casa, ver películas de terror y explorar el arte como pasatiempo. Siempre busco aprender cosas nuevas y expresar mi creatividad tanto en la web como en la vida diaria.
       </p>
       <div class="buttons">
         <a href="https://www.instagram.com/joexths" target="_blank" rel="noopener noreferrer" class="btn">Instagram</a>
@@ -91,7 +74,6 @@
       </div>
     </section>
 
-    <!-- Sección: Habilidades y Metas -->
     <section id="skills">
       <div class="grid">
         <div class="card">
@@ -115,15 +97,36 @@
       </div>
     </section>
 
-    <!-- Sección: Proyectos -->
     <section id="projects">
-      <h2>Proyectos pendientes</h2>
-      <div class="projects-grid">
+      <h2>Proyectos</h2>
 
+      <h3>Proyectos realizados</h3>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Calculadora IMC</h3>
+          <p>Aplicación de escritorio creada con Python y Tkinter para calcular el Índice de Masa Corporal (IMC) y mostrar recomendaciones de salud.</p>
+          <p class="project-tech">Python | Tkinter | GUI</p>
+        </div>
+
+        <div class="project-card">
+          <h3>Base de datos de perfumes</h3>
+          <p>Gestión de información de perfumes: marca, tipo, fragancia y precio. Ideal para practicar SQL y diseño de bases de datos.</p>
+          <p class="project-tech">SQL | Base de datos | Gestión de datos</p>
+        </div>
+
+        <div class="project-card">
+          <h3>Proyectos con Arduino</h3>
+          <p>Experimentos básicos con Arduino para controlar LEDs, sensores y motores. Aprendizaje práctico en electrónica y programación de microcontroladores.</p>
+          <p class="project-tech">Arduino | Electrónica | Programación básica</p>
+        </div>
+      </div>
+
+      <h3>Proyectos pendientes</h3>
+      <div class="projects-grid">
         <div class="project-card">
           <img src="https://tse4.mm.bing.net/th/id/OIP.Wl_6egJt8Qc6ndsbJlvuagHaEg?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Portafolio Personal">
           <h3>Portafolio Personal</h3>
-          <p>Sitio web personal diseñado para mostrar mis habilidades y proyectos, con un diseño moderno, animaciones suaves y enfoque en la experiencia de usuario.</p>
+          <p>Sitio web personal con diseño moderno, animaciones suaves y enfoque en la experiencia de usuario.</p>
           <p class="project-tech">HTML | CSS | Astro</p>
         </div>
 
@@ -137,14 +140,12 @@
         <div class="project-card">
           <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=250&q=80" alt="Generador de Colores">
           <h3>Generador de Colores</h3>
-          <p>Aplicación web que genera paletas de colores aleatorias, perfecta para practicar CSS y diseño creativo.</p>
+          <p>Aplicación web que genera paletas de colores aleatorias para practicar CSS y diseño creativo.</p>
           <p class="project-tech">CSS | JavaScript | Diseño Creativo</p>
         </div>
-
       </div>
     </section>
 
-    <!-- Sección: Contacto -->
     <section id="contact">
       <h2>Contacto</h2>
       <p>¡Gracias por visitar mi portafolio! Conectemos en Instagram o WhatsApp.</p>
@@ -153,10 +154,8 @@
         <a href="https://wa.me/593988162633" target="_blank" rel="noopener noreferrer" class="btn">WhatsApp</a>
       </div>
     </section>
-
   </main>
 
-  <!-- Footer -->
   <footer>
     <p>© 2025 Joel. Todos los derechos reservados.</p>
     <div>
@@ -164,6 +163,5 @@
       <a href="https://wa.me/593988162633" target="_blank" rel="noopener noreferrer">WhatsApp</a>
     </div>
   </footer>
-
 </body>
 </html>
